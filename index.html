@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aida Advisory Gruop · Apotheken &amp; Personalvermittlung</title>
+<meta name="description" content="Apothekentransaktionen und Personalvermittlung. Diskret, erfahren, persönlich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   ANPASSEN:
+   Aida Advisory               [Nachname]  → deinen vollen Namen
+   deine@email.de      → deine E-Mail (5x)
+   ============================================ */
+:root{
+  --bg:    #0d1018;
+  --bg2:   #131824;
+  --bg3:   #181f2e;
+  --gold:  #a08c60;
+  --gold2: #c4aa7a;
+  --text:  #e6e2d8;
+  --mid:   rgba(230,226,216,.55);
+  --dim:   rgba(230,226,216,.25);
+  --faint: rgba(230,226,216,.12);
+  --rule:  rgba(230,226,216,.08);
+  --rule2: rgba(160,140,96,.25);
+  --green: #1e4a30;
+  --green2:#2d6b44;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Mulish',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+.w{max-width:1080px;margin:0 auto;padding:0 56px;}
+@media(max-width:640px){.w{padding:0 24px;}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,16,24,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
+nav .nw{max-width:1080px;margin:0 auto;padding:0 56px;display:flex;justify-content:space-between;align-items:center;height:68px;}
+@media(max-width:640px){nav .nw{padding:0 24px;}}
+.nav-l{display:flex;flex-direction:column;}
+.nav-name{font-family:'Playfair Display',serif;font-size:16px;color:var(--text);font-weight:400;letter-spacing:.2px;}
+.nav-sub{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-top:2px;}
+.nav-r{display:flex;align-items:center;gap:24px;}
+.nav-loc{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);}
+.nav-btn{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--rule2);padding:8px 20px;transition:all .2s;}
+.nav-btn:hover{background:var(--gold);color:var(--bg);}
+@media(max-width:560px){.nav-loc{display:none;}}
+
+/* ── HERO ── */
+.hero{padding-top:68px;}
+.hero-main{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--rule);}
+@media(max-width:860px){.hero-main{grid-template-columns:1fr;min-height:auto;}}
+
+.hero-l{padding:72px 56px;border-right:1px solid var(--rule);}
+@media(max-width:860px){.hero-l{border-right:none;border-bottom:1px solid var(--rule);padding:60px 24px;}}
+.h-kicker{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:up .6s ease .2s forwards;}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,56px);font-weight:400;line-height:1.1;color:var(--text);letter-spacing:-.4px;margin-bottom:28px;opacity:0;animation:up .6s ease .4s forwards;}
+.hero-h1 em{font-style:italic;color:rgba(230,226,216,.42);}
+.h-line{width:36px;height:1px;background:var(--gold);margin-bottom:28px;opacity:0;animation:fade .8s ease .6s forwards;}
+.hero-desc{font-size:15.5px;line-height:1.85;color:var(--mid);max-width:400px;margin-bottom:40px;opacity:0;animation:up .6s ease .7s forwards;}
+.hero-btns{display:flex;flex-direction:column;gap:10px;max-width:240px;opacity:0;animation:up .6s ease .9s forwards;}
+.btn-g{display:block;text-align:center;background:var(--gold);color:var(--bg);padding:13px 24px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.btn-g:hover{background:var(--gold2);}
+.btn-o{display:block;text-align:center;background:transparent;color:rgba(230,226,216,.55);border:1px solid var(--faint);padding:12px 24px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;}
+.btn-o:hover{border-color:var(--rule2);color:var(--text);}
+
+/* Marktdaten */
+.hero-r{padding:56px;background:var(--bg2);}
+@media(max-width:860px){.hero-r{padding:40px 24px;}}
+.mkt-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;opacity:0;animation:up .6s ease .5s forwards;}
+.mkt-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-top:1px solid var(--rule);opacity:0;animation:fade .5s ease var(--d,.6s) forwards;}
+.mkt-row:last-of-type{border-bottom:1px solid var(--rule);}
+.mkt-label{font-size:12px;color:rgba(230,226,216,.38);max-width:58%;line-height:1.4;}
+.mkt-val{font-family:'Playfair Display',serif;font-size:22px;color:var(--text);white-space:nowrap;}
+.mkt-val.down{color:#d07060;}
+.mkt-val.soft{color:rgba(230,226,216,.6);}
+.mkt-src{font-size:11px;color:var(--faint);margin-top:16px;font-style:italic;opacity:0;animation:fade .6s ease 1.3s forwards;}
+
+/* Empathie-Strip */
+.empathy-strip{background:var(--bg3);border-top:2px solid var(--gold);border-bottom:1px solid var(--rule);}
+.empathy-strip .w{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;padding-top:0;padding-bottom:0;}
+@media(max-width:660px){.empathy-strip .w{grid-template-columns:1fr;}}
+.e-item{padding:32px 0;border-right:1px solid var(--rule);}
+.e-item+.e-item{padding-left:32px;}
+.e-item:last-child{border-right:none;}
+@media(max-width:660px){
+  .e-item{border-right:none;border-bottom:1px solid var(--rule);padding:20px 0;}
+  .e-item+.e-item{padding-left:0;}
+  .e-item:last-child{border-bottom:none;}
+}
+.e-item p{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--mid);line-height:1.5;}
+
+/* ── SEKTIONEN ── */
+section{padding:88px 0;border-top:1px solid var(--rule);}
+.s-header{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;margin-bottom:52px;}
+.s-num{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.s-h2{font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,38px);font-weight:400;color:var(--text);line-height:1.2;letter-spacing:-.2px;}
+
+/* GRID 3 */
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule);}
+@media(max-width:720px){.g3{grid-template-columns:1fr;}}
+.gc{background:var(--bg);padding:38px 32px;transition:background .2s;}
+.gc:hover{background:var(--bg2);}
+.gc-tag{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.gc h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--text);margin-bottom:10px;line-height:1.3;}
+.gc p{font-size:13.5px;line-height:1.75;color:var(--mid);}
+
+/* PERSONAL */
+.personal-sec{background:var(--green);padding:80px 0;border-top:1px solid var(--rule);}
+.ps-inner{max-width:1080px;margin:0 auto;padding:0 56px;}
+@media(max-width:640px){.ps-inner{padding:0 24px;}}
+.ps-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:48px;align-items:end;}
+@media(max-width:760px){.ps-head{grid-template-columns:1fr;gap:24px;}}
+.ps-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:14px;}
+.ps-h2{font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,36px);font-weight:400;color:var(--text);line-height:1.2;letter-spacing:-.2px;}
+.ps-sub{font-size:15px;line-height:1.8;color:rgba(230,226,216,.5);}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(230,226,216,.08);}
+@media(max-width:660px){.ps-grid{grid-template-columns:1fr;}}
+.ps-item{background:var(--green);padding:28px 28px 28px 0;transition:background .2s;}
+.ps-item:hover{background:var(--green2);}
+.ps-item-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;}
+.ps-item h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--text);margin-bottom:8px;}
+.ps-item p{font-size:13.5px;line-height:1.7;color:rgba(230,226,216,.45);}
+
+/* ABLAUF */
+.ablauf-wrap{display:grid;grid-template-columns:2fr 1fr;gap:64px;align-items:start;}
+@media(max-width:840px){.ablauf-wrap{grid-template-columns:1fr;gap:40px;}}
+.ablauf-steps{display:flex;flex-direction:column;}
+.a-step{display:grid;grid-template-columns:40px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--rule);}
+.a-step:first-child{border-top:1px solid var(--rule);}
+.a-n{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--gold);padding-top:3px;}
+.a-step h4{font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--text);margin-bottom:6px;}
+.a-step p{font-size:13.5px;line-height:1.75;color:var(--mid);}
+.ablauf-aside{background:var(--bg2);padding:36px;position:sticky;top:86px;}
+.aa-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.ablauf-aside h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:12px;line-height:1.3;}
+.ablauf-aside p{font-size:14px;line-height:1.75;color:var(--mid);}
+.aa-div{height:1px;background:var(--rule);margin:20px 0;}
+.aa-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:10px;}
+.aa-email{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);text-decoration:none;transition:color .2s;word-break:break-all;border-bottom:1px solid var(--rule2);}
+.aa-email:hover{color:var(--gold2);}
+
+/* CTA */
+.cta-sec{padding:80px 0;border-top:1px solid var(--rule);text-align:center;}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);font-weight:400;color:var(--text);margin-bottom:14px;letter-spacing:-.2px;}
+.cta-sec p{font-size:15px;color:var(--mid);margin-bottom:40px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.8;}
+.btn-cta{display:inline-block;background:var(--gold);color:var(--bg);padding:15px 44px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.btn-cta:hover{background:var(--gold2);}
+
+/* ── FOOTER — mit korrekten Links ── */
+footer{border-top:1px solid var(--rule);padding:40px 0;}
+footer .w{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.f-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--faint);}
+.f-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap;}
+.f-links a{font-size:11px;color:var(--faint);text-decoration:none;letter-spacing:.5px;padding:4px 12px;transition:color .2s;}
+.f-links a:hover{color:var(--gold);}
+.f-links span{color:var(--rule);font-size:11px;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .72s ease,transform .72s ease;}
+.reveal.vis{opacity:1;transform:none;}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}
+
+@keyframes up{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+@keyframes fade{from{opacity:0;}to{opacity:1;}}
+
+@media(max-width:480px){
+  .hero-h1{font-size:32px;}
+  .s-h2{font-size:26px;}
+  .ps-h2{font-size:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nw">
+    <div class="nav-l">
+      <!-- ← ANPASSEN -->
+      <div class="nav-name">Aida Advisory Gruop</div>
+      <div class="nav-sub">Apotheken · Personal · Transaktionen</div>
+    </div>
+    <div class="nav-r">
+      <span class="nav-loc">Bundesweit </span>
+      <!-- ← ANPASSEN: deine@email.de -->
+      <a href="mailto:kontakt@aida-advisory.de" class="nav-btn">Anfragen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-l">
+      <div class="h-kicker">Apotheken · Personal · Bundesweit</div>
+      <h1 class="hero-h1">
+        Diskret.<br>
+        <br>
+        <em>Apotheken & Personalvermittlung<br>
+        </em>
+      </h1>
+      <div class="h-line"></div>
+      <p class="hero-desc">Wir verbinden verkaufswillige Apothekeninhaber mit approbierten Käufern — und Apotheken mit dem Fachpersonal das fehlt. Vertraulich, persönlich, mit starken Partnern.</p>
+      <div class="hero-btns">
+        <!-- ← ANPASSEN: deine@email.de -->
+        <a href="mailto:kontakt@aida-advisory.de" class="btn-g">Vertraulich anfragen</a>
+        <a href="#leistungen" class="btn-o">Mehr erfahren</a>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="mkt-title">Apothekenmarkt 2025 — ABDA</div>
+      <div class="mkt-row" style="--d:.6s">
+        <span class="mkt-label">Apotheken in Deutschland (Ende 2025)</span>
+        <span class="mkt-val down">16.601</span>
+      </div>
+      <div class="mkt-row" style="--d:.72s">
+        <span class="mkt-label">Schließungen minus Eröffnungen 2025</span>
+        <span class="mkt-val down">−440</span>
+      </div>
+      <div class="mkt-row" style="--d:.84s">
+        <span class="mkt-label">Niedrigster Stand seit</span>
+        <span class="mkt-val soft">1977</span>
+      </div>
+      <div class="mkt-row" style="--d:.96s">
+        <span class="mkt-label">Ø Gewinn vor Steuern 2024</span>
+        <span class="mkt-val soft">162 T€</span>
+      </div>
+      <div class="mkt-row" style="--d:1.08s">
+        <span class="mkt-label">Apotheken in defizitärer Lage 2024</span>
+        <span class="mkt-val down">6,5 %</span>
+      </div>
+      <div class="mkt-row" style="--d:1.2s">
+        <span class="mkt-label">Ø Kaufpreis Apothekenübernahme</span>
+        <span class="mkt-val soft">530 T€</span>
+      </div>
+      <p class="mkt-src">Quellen: ABDA Jahrbuch 2025 · apoBank Existenzgründungsanalyse 2024</p>
+    </div>
+  </div>
+
+  <!-- Empathie-Strip -->
+  <div class="empathy-strip">
+    <div class="w">
+      <div class="e-item reveal">
+        <p>"Sie haben jahrelang aufgebaut — und merken, dass die Zeit für eine Entscheidung kommt."</p>
+      </div>
+      <div class="e-item reveal d1">
+        <p>"Die Filiale braucht einen Apothekenleiter — und der Markt ist leergefegt."</p>
+      </div>
+      <div class="e-item reveal d2">
+        <p>"Sie wollen verkaufen — aber nicht, dass es im Ort oder beim Personal bekannt wird."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="w">
+    <div class="s-header reveal">
+      <span class="s-num">I.</span>
+      <h2 class="s-h2">Was wir tun — und wie</h2>
+    </div>
+    <div class="g3">
+      <div class="gc reveal d1">
+        <div class="gc-tag">Modell</div>
+        <h3>Tippgeber — kein Makler</h3>
+        <p>Wir vermittlen den Kontakt. Die rechtliche und betriebswirtschaftliche Abwicklung übernehmen spezialisierte Partner. Kein Vorlaufhonorar — Provision nur bei Abschluss.</p>
+      </div>
+      <div class="gc reveal d2">
+        <div class="gc-tag">Transaktion</div>
+        <h3>Kauf &amp; Verkauf von Apotheken</h3>
+        <p>Diskreter Zugang zu approbierten Käufern und verkaufswilligen Inhabern. Kein öffentliches Exposé — kein Name ohne Ihre Freigabe.</p>
+      </div>
+      <div class="gc reveal d3">
+        <div class="gc-tag">Personal</div>
+        <h3>Approbierte Fachkräfte</h3>
+        <p>Apothekenleiter, approbierte Apotheker, PTAs — auch ohne Stellenausschreibung, wenn Sie Diskretion benötigen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAS ICH VERSTEHE -->
+<section>
+  <div class="w">
+    <div class="s-header reveal">
+      <span class="s-num">II.</span>
+      <h2 class="s-h2">Was jede Apothekentransaktion erfordert</h2>
+    </div>
+    <div class="g3">
+      <div class="gc reveal d1">
+        <div class="gc-tag">Betriebserlaubnis</div>
+        <h3>Personengebunden — nicht übertragbar</h3>
+        <p>Sie erlischt mit der Abmeldung des Inhabers und muss neu beantragt werden. Falscher Zeitplan bedeutet Betriebsunterbrechung. Das muss von Anfang an eingeplant sein.</p>
+      </div>
+      <div class="gc reveal d2">
+        <div class="gc-tag">Kassenzulassung</div>
+        <h3>§ 129 SGB V — nicht automatisch</h3>
+        <p>Versorgungsverträge sind an den Inhaber geknüpft. Bei Trägerwechsel ist eine Neuanmeldung erforderlich. Ohne laufende Zulassung verliert die Apotheke ihr wirtschaftliches Fundament.</p>
+      </div>
+      <div class="gc reveal d3">
+        <div class="gc-tag">Diskretion</div>
+        <h3>Jedes Gerücht kostet Wert</h3>
+        <p>Ein bekannter Verkaufsprozess verändert das Verhalten von Personal, Stammkunden und Ärzten sofort. Diskretion ist keine Formalität — sie schützt den Unternehmenswert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<div class="personal-sec">
+  <div class="ps-inner">
+    <div class="ps-head">
+      <div>
+        <div class="ps-tag reveal">Personalvermittlung</div>
+        <h2 class="ps-h2 reveal">Fachkräfte finden — bevor es ein Problem wird</h2>
+      </div>
+      <p class="ps-sub reveal">Rund 3.000 Apotheker fehlen am deutschen Markt. Bis zu 20.000 Euro Honorar werden für einen approbierten Apothekenleiter gezahlt. Der Wettbewerb ist real.</p>
+    </div>
+    <div class="ps-grid">
+      <div class="ps-item reveal d1">
+        <div class="ps-item-tag">Apothekenleiter</div>
+        <h4>Filialleiter &amp; verantwortliche Apotheker</h4>
+        <p>Gesetzlich vorgeschrieben für jede Filialapotheke. Fällt diese Stelle weg, ist die Betriebserlaubnis gefährdet.</p>
+      </div>
+      <div class="ps-item reveal d2">
+        <div class="ps-item-tag">Approbierte Apotheker</div>
+        <h4>Für Ihre Offizin &amp; Filialen</h4>
+        <p>Vollzeit, Teilzeit oder Vertretung — qualifiziert, diskret vermittelt, ohne öffentliche Ausschreibung wenn gewünscht.</p>
+      </div>
+      <div class="ps-item reveal d1">
+        <div class="ps-item-tag">PTA / PKA</div>
+        <h4>Pharmazeutisches Fachpersonal</h4>
+        <p>PTAs und PKAs mit Qualifikationsnachweis — für bestehende Stellen und neu übernommene Filialen.</p>
+      </div>
+      <div class="ps-item reveal d2">
+        <div class="ps-item-tag">Diskrete Direktansprache</div>
+        <h4>Ohne Inserat — ohne Unruhe</h4>
+        <p>Nicht jede Suche soll bekannt werden. Auf Wunsch sprechen wir Kandidaten direkt an — vertraulich und gezielt.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABLAUF -->
+<section>
+  <div class="w">
+    <div class="s-header reveal">
+      <span class="s-num">III.</span>
+      <h2 class="s-h2">Der Ablauf</h2>
+    </div>
+    <div class="ablauf-wrap">
+      <div class="ablauf-steps">
+        <div class="a-step reveal">
+          <div class="a-n">01</div>
+          <div><h4>Erstes Gespräch</h4><p>Offen, vertraulich, ohne Verpflichtung. Sie schildern Ihre Situation — wir erklären konkret was wir tun können und welche Partner wir einbinden.</p></div>
+        </div>
+        <div class="a-step reveal">
+          <div class="a-n">02</div>
+          <div><h4>Einschätzung &amp; Strategie</h4><p>Realistische Werteinschätzung bei Transaktionen. Genaues Anforderungsprofil bei Personalsuche. Kein Schönreden.</p></div>
+        </div>
+        <div class="a-step reveal">
+          <div class="a-n">03</div>
+          <div><h4>Gezielte Ansprache</h4><p>Ausschließlich vorgeprüfte Kontakte — kein Name, kein Standort ohne Ihre ausdrückliche Freigabe. Kein Exposé ohne Zustimmung.</p></div>
+        </div>
+        <div class="a-step reveal">
+          <div class="a-n">04</div>
+          <div><h4>Übergabe &amp; Abschluss</h4><p>Koordination mit spezialisierten M&amp;A-Beratern, Apothekenrecht-Kanzleien und Personalpartnern — bis zur Beurkundung oder zum Arbeitsvertrag.</p></div>
+        </div>
+      </div>
+      <div class="ablauf-aside reveal">
+        <div class="aa-tag">Wichtig</div>
+        <h3>Kein Vorlaufhonorar</h3>
+        <p>Wir verdienen ausschließlich bei erfolgreichem Abschluss — durch eine Tippgeberprovision mit dem beauftragten Fachberater. Für Sie entstehen keine Kosten im Voraus.</p>
+        <div class="aa-div"></div>
+        <p>Wir sind Tippgeber, keine Makler. Wir bringen zusammen — und stellen sicher, dass die richtigen Spezialisten die Abwicklung übernehmen.</p>
+        <div class="aa-div"></div>
+        <div class="aa-label">Vertrauliche Anfrage</div>
+        <!-- ← ANPASSEN: deine@email.de -->
+        <a href="mailto:kontakt@aida.advisory.de" class="aa-email">kontakt@aida-advisory.de</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="w">
+    <h2 class="reveal">Bereit für ein vertrauliches Gespräch?</h2>
+    <p class="reveal">Ob Transaktion oder Personalsuche — wir antworten persönlich, ohne Agentur-Prosa und ohne Verpflichtung.</p>
+    <!-- ← ANPASSEN: deine@email.de -->
+    <a href="mailto:kontakt@aida-advisory.de" class="btn-cta reveal">Jetzt anfragen</a>
+  </div>
+</div>
+
+<!-- FOOTER — Links zu Impressum und Datenschutz -->
+<footer>
+  <div class="w">
+    <div class="f-name">Aida Advisory Group</div>
+    <div class="f-links">
+      <a href="impressum.html">Impressum</a>
+      <span>·</span>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target);}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

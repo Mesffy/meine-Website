@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz · Aida Advisory Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:    #0d1018;
+  --bg2:   #131824;
+  --gold:  #a08c60;
+  --gold2: #c4aa7a;
+  --text:  #e6e2d8;
+  --mid:   rgba(230,226,216,.55);
+  --dim:   rgba(230,226,216,.25);
+  --faint: rgba(230,226,216,.12);
+  --rule:  rgba(230,226,216,.08);
+  --rule2: rgba(160,140,96,.25);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Mulish',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+.w{max-width:760px;margin:0 auto;padding:0 52px;}
+@media(max-width:640px){.w{padding:0 24px;}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,16,24,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
+nav .nw{max-width:1080px;margin:0 auto;padding:0 56px;display:flex;justify-content:space-between;align-items:center;height:68px;}
+@media(max-width:640px){nav .nw{padding:0 24px;}}
+.nav-name{font-family:'Playfair Display',serif;font-size:16px;color:var(--text);font-weight:400;}
+.nav-back{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--rule2);padding:8px 18px;transition:all .2s;}
+.nav-back:hover{background:var(--gold);color:var(--bg);}
+
+.page{padding-top:68px;}
+.page-header{padding:72px 0 48px;border-bottom:1px solid var(--rule);}
+.page-header h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:var(--text);letter-spacing:-.3px;margin-bottom:12px;}
+.page-header p{font-size:14px;color:var(--mid);}
+
+.legal-section{padding:48px 0;border-bottom:1px solid var(--rule);}
+.legal-section:last-child{border-bottom:none;padding-bottom:80px;}
+.ls-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.ls-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+.ls-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:20px;line-height:1.3;}
+.ls-h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--text);margin:28px 0 10px;}
+.ls-h4{font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin:18px 0 8px;}
+
+p{font-size:14.5px;line-height:1.85;color:var(--mid);margin-bottom:12px;}
+p:last-child{margin-bottom:0;}
+strong{color:var(--text);font-weight:500;}
+
+ul{margin:12px 0 16px 0;padding-left:0;list-style:none;}
+ul li{font-size:14.5px;line-height:1.85;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--rule);display:flex;align-items:baseline;gap:12px;}
+ul li:last-child{border-bottom:none;}
+ul li::before{content:'—';color:var(--gold);font-size:12px;flex-shrink:0;}
+
+.data-block{background:var(--bg2);border:1px solid var(--rule);padding:24px 28px;margin:16px 0;}
+.data-block p{margin-bottom:6px;color:var(--text);}
+.data-block p:last-child{margin-bottom:0;}
+.data-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:8px;}
+
+a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--rule2);transition:color .2s;}
+a:hover{color:var(--gold2);}
+
+.generator-note{margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);}
+.generator-note p{font-size:12px;color:var(--faint);font-style:italic;}
+
+footer{border-top:1px solid var(--rule);padding:36px 0;}
+footer .fw{max-width:1080px;margin:0 auto;padding:0 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+@media(max-width:640px){footer .fw{padding:0 24px;}}
+.f-name{font-family:'Playfair Display',serif;font-size:13px;color:var(--faint);}
+.f-links a{font-size:11px;color:var(--faint);text-decoration:none;border:none;margin-left:20px;letter-spacing:.5px;transition:color .2s;}
+.f-links a:hover{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nw">
+    <div class="nav-name">Aida Advisory Group</div>
+    <a href="index.html" class="nav-back">← Zurück</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <div class="w">
+      <h1>Datenschutzerklärung</h1>
+      <p>Gemäß EU-Datenschutz-Grundverordnung (DSGVO)</p>
+    </div>
+  </div>
+
+  <!-- VERANTWORTLICHER -->
+  <div class="legal-section">
+    <div class="w">
+      <div class="ls-label">Verantwortlicher</div>
+      <h2 class="ls-h2">Wer ist verantwortlich?</h2>
+      <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO), ist:</p>
+      <div class="data-block">
+        <!-- ← ANPASSEN -->
+        <p>Aida Kidane</p>
+        <p>Bahnhofstrasse 82</p>
+        <p>70736 Stuttgart</p>
+        <p>Deutschland</p>
+        <p>E-Mail: <a href="mailto:kontakt@aida-advisory.de">kontakt@aida-advisory.de</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BETROFFENENRECHTE -->
+  <div class="legal-section">
+    <div class="w">
+      <div class="ls-label">Art. 15–21 DSGVO</div>
+      <h2 class="ls-h2">Ihre Betroffenenrechte</h2>
+      <p>Unter den angegebenen Kontaktdaten können Sie gemäß EU-Datenschutz-Grundverordnung (DSGVO) jederzeit folgende Rechte ausüben:</p>
+      <ul>
+        <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO)</li>
+        <li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO)</li>
+        <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO)</li>
+        <li>Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch nicht löschen dürfen (Art. 18 DSGVO)</li>
+        <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO)</li>
+        <li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns abgeschlossen haben (Art. 20 DSGVO)</li>
+      </ul>
+      <p>Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+      <p>Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an den Landesbeauftragten für den Datenschutz und die Informationsfreiheit Baden-Württemberg: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a></p>
+    </div>
+  </div>
+
+  <!-- VERARBEITUNGSTÄTIGKEITEN -->
+  <div class="legal-section">
+    <div class="w">
+      <div class="ls-label">Verarbeitungstätigkeiten</div>
+      <h2 class="ls-h2">Art und Zweck der Datenverarbeitung</h2>
+
+      <h3 class="ls-h3">Bereitstellung der Website (Hosting)</h3>
+      <p>
+        Diese Website wird gehostet bei <strong>GitHub, Inc.</strong>. Dabei werden automatisch Server-Logfiles verarbeitet (z. B. IP-Adresse, Zeitpunkt des Zugriffs, Browsertyp). Diese Daten sind technisch erforderlich, um die Website bereitzustellen.
+
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem Betrieb der Website).
+      </p>
+      <div class="ls-h4">Rechtsgrundlage</div>
+      <p>
+        Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am stabilen und sicheren Betrieb der Website). Sie ist unter dem EU-U.S. Data Privacy Framework zertifiziert, wodurch ein angemessenes Datenschutzniveau für die Datenübertragung in die USA gewährleistet ist.
+      </p>
+
+      <h3 class="ls-h3">SSL-Verschlüsselung</h3>
+      <p>
+        Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, wird dem aktuellen Stand der Technik entsprechende Verschlüsselung (SSL/TLS) über HTTPS verwendet und ist für Sie am Schloss-Symbol in der Adressleiste Ihres Browsers erkennbar.
+      </p>
+
+      <h3 class="ls-h3">Kontaktaufnahme per E-Mail</h3>
+      <p> Eine Kontaktaufnahme erfolgt freiwillig über die angegebene E-Mail-Adresse. In diesem Fall werden die mit der E-Mail übermittelten personenbezogenen Daten (insbesondere Ihre E-Mail-Adresse, Name und Inhalt Ihrer Anfrage) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert und verarbeitet. Die Kommunikation erfolgt im Rahmen eines persönlichen und nicht-kommerziellen Austauschs.
+      </p>
+      <div class="ls-h4">Rechtsgrundlage</div>
+      <p>
+        Die Verarbeitung erfolgt auf Grundlage eines berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO) oder zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden nicht ohne Ihre Zustimmung an Dritte weitergegeben.
+      </p>
+      <div class="ls-h4">Speicherdauer</div>
+      <p>
+        Die Daten werden gelöscht, sobald sie für die Bearbeitung der Anfrage nicht mehr erforderlich sind.
+      </p>
+
+      <h3 class="ls-h3">Cookies und Tracking</h3>
+      <p>
+        Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools (kein Google Analytics, keine Social-Media-Pixel, keine Werbenetzwerke). Es werden ausschließlich die technisch notwendigen Daten durch den Hosting-Anbieter GitHub verarbeitet (siehe oben).
+      </p>
+    </div>
+  </div>
+
+  <!-- WIDERSPRUCHSRECHT -->
+  <div class="legal-section">
+    <div class="w">
+      <div class="ls-label">Art. 21 DSGVO</div>
+      <h2 class="ls-h2">Widerspruchsrecht</h2>
+
+      <h3 class="ls-h3">Einzelfallbezogenes Widerspruchsrecht</h3>
+      <p>
+        Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) erfolgt, Widerspruch einzulegen.
+      </p>
+      <p>
+        Legen Sie Widerspruch ein, werden Ihre personenbezogenen Daten nicht mehr verarbeitet, es sei denn, es können zwingende schutzwürdige Gründe für die Verarbeitung nachgewiesen werden, die Ihre Interessen überwiegen.
+      </p>
+
+      <h3 class="ls-h3">Empfänger eines Widerspruchs</h3>
+      <div class="data-block">
+        <!-- ← ANPASSEN -->
+        <p>Aida Kidane</p>
+        <p><a href="mailto:kontakt@aida-advisory.de">kontakt@aida-advisory.de</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AKTUALITÄT -->
+  <div class="legal-section">
+    <div class="w">
+         <div class="ls-label">Aktualität</div>
+      <h2 class="ls-h2">Änderung dieser Erklärung</h2>
+      <p>
+        Diese Datenschutzerklärung wird bei Bedarf angepasst, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen der Leistungen umzusetzen. Für einen erneuten Besuch gilt dann die jeweils neue Datenschutzerklärung.
+      </p>
+      <!-- ← ANPASSEN: Datum prüfen -->
+      <p>Stand: April 2026</p>
+
+      <div class="generator-note">
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fw">
+    <div class="f-name">Aida Advisory Group</div>
+    <div class="f-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="index.html">Zurück zur Website</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
