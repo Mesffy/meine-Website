@@ -3,119 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutz · Aida Advisory Group</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Datenschutz · AIDA Advisory Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:    #0d1018;
-  --bg2:   #131824;
-  --gold:  #a08c60;
-  --gold2: #c4aa7a;
-  --text:  #e6e2d8;
-  --mid:   rgba(230,226,216,.55);
-  --dim:   rgba(230,226,216,.25);
-  --faint: rgba(230,226,216,.12);
-  --rule:  rgba(230,226,216,.08);
-  --rule2: rgba(160,140,96,.25);
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy:       #0D1B2A;
+  --navy-mid:   #1A3C5E;
+  --gold:       #B8962E;
+  --gold-light: #D4AF5A;
+  --cream:      #FAF7F2;
+  --white:      #FFFFFF;
+  --text:       #2A2A2A;
+  --muted:      #555555;
+  --border:     rgba(184,150,46,0.2);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Mulish',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
 
-.w{max-width:760px;margin:0 auto;padding:0 52px;}
-@media(max-width:640px){.w{padding:0 24px;}}
+html { scroll-behavior: smooth; }
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,16,24,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
-nav .nw{max-width:1080px;margin:0 auto;padding:0 56px;display:flex;justify-content:space-between;align-items:center;height:68px;}
-@media(max-width:640px){nav .nw{padding:0 24px;}}
-.nav-name{font-family:'Playfair Display',serif;font-size:16px;color:var(--text);font-weight:400;}
-.nav-back{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--rule2);padding:8px 18px;transition:all .2s;}
-.nav-back:hover{background:var(--gold);color:var(--bg);}
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-.page{padding-top:68px;}
-.page-header{padding:72px 0 48px;border-bottom:1px solid var(--rule);}
-.page-header h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:var(--text);letter-spacing:-.3px;margin-bottom:12px;}
-.page-header p{font-size:14px;color:var(--mid);}
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(13,27,42,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(184,150,46,0.15);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400;
+  color: var(--white); letter-spacing: 0.08em; text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-back {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+  border: 1px solid rgba(184,150,46,0.4); padding: 8px 20px;
+  transition: all 0.2s;
+}
+.nav-back:hover { background: var(--gold); color: var(--navy); }
 
-.legal-section{padding:48px 0;border-bottom:1px solid var(--rule);}
-.legal-section:last-child{border-bottom:none;padding-bottom:80px;}
-.ls-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
-.ls-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
-.ls-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:20px;line-height:1.3;}
-.ls-h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--text);margin:28px 0 10px;}
-.ls-h4{font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin:18px 0 8px;}
+/* ── PAGE HEADER — HELL ── */
+.page-header {
+  padding-top: 68px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+.page-header-inner {
+  max-width: 860px; margin: 0 auto;
+  padding: 64px 60px 48px;
+}
+.page-eyebrow {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+}
+.page-eyebrow::before {
+  content: ''; width: 16px; height: 1px;
+  background: var(--gold); display: inline-block;
+}
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 56px); font-weight: 300;
+  color: var(--navy); line-height: 1.1; margin-bottom: 12px;
+}
+.page-sub {
+  font-size: 13px; font-weight: 300;
+  color: var(--muted); letter-spacing: 0.05em;
+}
 
-p{font-size:14.5px;line-height:1.85;color:var(--mid);margin-bottom:12px;}
-p:last-child{margin-bottom:0;}
-strong{color:var(--text);font-weight:500;}
+.gold-rule-full {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
 
-ul{margin:12px 0 16px 0;padding-left:0;list-style:none;}
-ul li{font-size:14.5px;line-height:1.85;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--rule);display:flex;align-items:baseline;gap:12px;}
-ul li:last-child{border-bottom:none;}
-ul li::before{content:'—';color:var(--gold);font-size:12px;flex-shrink:0;}
+/* ── CONTENT — HELL ── */
+.content-area {
+  background: var(--cream);
+  padding: 56px 0 72px;
+}
+.content-inner {
+  max-width: 860px; margin: 0 auto; padding: 0 60px;
+}
 
-.data-block{background:var(--bg2);border:1px solid var(--rule);padding:24px 28px;margin:16px 0;}
-.data-block p{margin-bottom:6px;color:var(--text);}
-.data-block p:last-child{margin-bottom:0;}
-.data-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:8px;}
+@media (max-width: 640px) {
+  nav { padding: 16px 24px; }
+  .page-header-inner { padding: 48px 24px 36px; }
+  .content-inner { padding: 0 24px; }
+}
 
-a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--rule2);transition:color .2s;}
-a:hover{color:var(--gold2);}
+/* ── SECTIONS ── */
+.legal-section {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(184,150,46,0.15);
+}
+.legal-section:last-child { border-bottom: none; padding-bottom: 0; }
 
-.generator-note{margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);}
-.generator-note p{font-size:12px;color:var(--faint);font-style:italic;}
+.section-label {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+}
+.section-label::before {
+  content: ''; width: 16px; height: 1px;
+  background: var(--gold); display: inline-block;
+}
 
-footer{border-top:1px solid var(--rule);padding:36px 0;}
-footer .fw{max-width:1080px;margin:0 auto;padding:0 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-@media(max-width:640px){footer .fw{padding:0 24px;}}
-.f-name{font-family:'Playfair Display',serif;font-size:13px;color:var(--faint);}
-.f-links a{font-size:11px;color:var(--faint);text-decoration:none;border:none;margin-left:20px;letter-spacing:.5px;transition:color .2s;}
-.f-links a:hover{color:var(--gold);}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400;
+  color: var(--navy); margin-bottom: 14px; line-height: 1.3;
+}
+
+.sub-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400;
+  color: var(--navy); margin: 24px 0 10px;
+}
+
+.sub-label {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(184,150,46,0.7); margin: 16px 0 7px;
+}
+
+/* ── DATA BLOCKS ── */
+.data-block {
+  background: var(--white);
+  border: 1px solid rgba(184,150,46,0.18);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px; margin: 12px 0;
+}
+.data-label {
+  font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.data-value {
+  font-size: 14px; font-weight: 300;
+  color: var(--text); line-height: 1.75;
+}
+.data-value a {
+  color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid rgba(184,150,46,0.3);
+  transition: color 0.2s;
+}
+.data-value a:hover { color: var(--navy); }
+
+/* ── PROSE ── */
+.prose {
+  font-size: 14px; font-weight: 300;
+  line-height: 1.9; color: var(--muted); margin-bottom: 12px;
+}
+.prose:last-child { margin-bottom: 0; }
+.prose strong { color: var(--text); font-weight: 500; }
+.prose a {
+  color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid rgba(184,150,46,0.3);
+  transition: color 0.2s;
+}
+.prose a:hover { color: var(--navy); }
+
+/* ── LIST ── */
+.legal-list {
+  list-style: none; margin: 12px 0 16px;
+  display: flex; flex-direction: column;
+}
+.legal-list li {
+  font-size: 14px; font-weight: 300; line-height: 1.85;
+  color: var(--muted); padding: 10px 0;
+  border-bottom: 1px solid rgba(184,150,46,0.1);
+  display: flex; align-items: baseline; gap: 12px;
+}
+.legal-list li:last-child { border-bottom: none; }
+.legal-list li::before {
+  content: '—'; color: var(--gold);
+  font-size: 12px; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.prose-note {
+  font-size: 11px; font-weight: 300;
+  color: rgba(184,150,46,0.6); margin-top: 20px; font-style: italic;
+}
+
+/* ── FOOTER — DUNKEL ── */
+footer {
+  background: #080E14;
+  padding: 32px 60px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 14px;
+  border-top: 1px solid rgba(184,150,46,0.1);
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400;
+  color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
+}
+.footer-logo span { color: rgba(184,150,46,0.6); }
+.footer-links {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 10px;
+}
+.footer-links a {
+  font-size: 11px; font-weight: 400;
+  color: rgba(255,255,255,0.4); text-decoration: none;
+  letter-spacing: 0.08em; transition: color 0.2s;
+}
+.footer-links a:hover { color: rgba(184,150,46,0.8); }
+
+@media (max-width: 640px) {
+  footer { padding: 28px 24px; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nw">
-    <div class="nav-name">Aida Advisory Group</div>
-    <a href="index.html" class="nav-back">← Zurück</a>
-  </div>
+  <a href="index.html" class="nav-logo">AIDA <span>Advisory</span></a>
+  <a href="index.html" class="nav-back">← Zurück</a>
 </nav>
 
-<div class="page">
-  <div class="page-header">
-    <div class="w">
-      <h1>Datenschutzerklärung</h1>
-      <p>Gemäß EU-Datenschutz-Grundverordnung (DSGVO)</p>
-    </div>
+<!-- HEADER — HELL -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Rechtliche Angaben</div>
+    <h1 class="page-title">Datenschutzerklärung</h1>
+    <p class="page-sub">Gemäß EU-Datenschutz-Grundverordnung (DSGVO)</p>
   </div>
+</div>
+<div class="gold-rule-full"></div>
 
-  <!-- VERANTWORTLICHER -->
-  <div class="legal-section">
-    <div class="w">
-      <div class="ls-label">Verantwortlicher</div>
-      <h2 class="ls-h2">Wer ist verantwortlich?</h2>
-      <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO), ist:</p>
+<!-- CONTENT — HELL -->
+<div class="content-area">
+  <div class="content-inner">
+
+    <div class="legal-section">
+      <div class="section-label">Verantwortlicher</div>
+      <h2 class="section-title">Wer ist verantwortlich?</h2>
+      <p class="prose">Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO), ist:</p>
       <div class="data-block">
-        <!-- ← ANPASSEN -->
-        <p>Damaris Mesffin</p>
-        <p>Bahnhofstrasse 82</p>
-        <p>70736 Stuttgart</p>
-        <p>Deutschland</p>
-        <p>E-Mail: <a href="mailto:kontakt@aida-advisory.de">kontakt@aida-advisory.de</a></p>
+        <div class="data-label">Verantwortliche Person</div>
+        <div class="data-value">
+          Damaris Mesffin<br>
+          Bahnhofstraße 82<br>
+          70736 Stuttgart<br>
+          Deutschland<br>
+          E-Mail: <a href="mailto:kontakt@aida-advisory.de">kontakt@aida-advisory.de</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- BETROFFENENRECHTE -->
-  <div class="legal-section">
-    <div class="w">
-      <div class="ls-label">Art. 15–21 DSGVO</div>
-      <h2 class="ls-h2">Ihre Betroffenenrechte</h2>
-      <p>Unter den angegebenen Kontaktdaten können Sie gemäß EU-Datenschutz-Grundverordnung (DSGVO) jederzeit folgende Rechte ausüben:</p>
-      <ul>
+    <div class="legal-section">
+      <div class="section-label">Art. 15–21 DSGVO</div>
+      <h2 class="section-title">Ihre Betroffenenrechte</h2>
+      <p class="prose">Unter den angegebenen Kontaktdaten können Sie gemäß DSGVO jederzeit folgende Rechte ausüben:</p>
+      <ul class="legal-list">
         <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO)</li>
         <li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO)</li>
         <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO)</li>
@@ -123,103 +281,67 @@ footer .fw{max-width:1080px;margin:0 auto;padding:0 56px;display:flex;justify-co
         <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO)</li>
         <li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns abgeschlossen haben (Art. 20 DSGVO)</li>
       </ul>
-      <p>Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
-      <p>Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an den Landesbeauftragten für den Datenschutz und die Informationsfreiheit Baden-Württemberg: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a></p>
+      <p class="prose">Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+      <p class="prose">Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an den Landesbeauftragten für den Datenschutz Baden-Württemberg: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a></p>
     </div>
-  </div>
 
-  <!-- VERARBEITUNGSTÄTIGKEITEN -->
-  <div class="legal-section">
-    <div class="w">
-      <div class="ls-label">Verarbeitungstätigkeiten</div>
-      <h2 class="ls-h2">Art und Zweck der Datenverarbeitung</h2>
+    <div class="legal-section">
+      <div class="section-label">Verarbeitungstätigkeiten</div>
+      <h2 class="section-title">Art und Zweck der Datenverarbeitung</h2>
 
-      <h3 class="ls-h3">Bereitstellung der Website (Hosting)</h3>
-      <p>
-        Diese Website wird gehostet bei <strong>GitHub, Inc.</strong>. Dabei werden automatisch Server-Logfiles verarbeitet (z. B. IP-Adresse, Zeitpunkt des Zugriffs, Browsertyp). Diese Daten sind technisch erforderlich, um die Website bereitzustellen.
+      <h3 class="sub-title">Bereitstellung der Website (Hosting)</h3>
+      <p class="prose">Diese Website wird gehostet bei <strong>GitHub, Inc.</strong> Dabei werden automatisch Server-Logfiles verarbeitet (z. B. IP-Adresse, Zeitpunkt des Zugriffs, Browsertyp). Diese Daten sind technisch erforderlich, um die Website bereitzustellen.</p>
+      <div class="sub-label">Rechtsgrundlage</div>
+      <p class="prose">Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am stabilen und sicheren Betrieb der Website). GitHub ist unter dem EU-U.S. Data Privacy Framework zertifiziert.</p>
 
-Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem Betrieb der Website).
-      </p>
-      <div class="ls-h4">Rechtsgrundlage</div>
-      <p>
-        Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am stabilen und sicheren Betrieb der Website). Sie ist unter dem EU-U.S. Data Privacy Framework zertifiziert, wodurch ein angemessenes Datenschutzniveau für die Datenübertragung in die USA gewährleistet ist.
-      </p>
+      <h3 class="sub-title">SSL-Verschlüsselung</h3>
+      <p class="prose">Zur Sicherheit Ihrer Daten bei der Übertragung wird dem aktuellen Stand der Technik entsprechende Verschlüsselung (SSL/TLS) über HTTPS verwendet — erkennbar am Schloss-Symbol in der Adressleiste.</p>
 
-      <h3 class="ls-h3">SSL-Verschlüsselung</h3>
-      <p>
-        Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, wird dem aktuellen Stand der Technik entsprechende Verschlüsselung (SSL/TLS) über HTTPS verwendet und ist für Sie am Schloss-Symbol in der Adressleiste Ihres Browsers erkennbar.
-      </p>
+      <h3 class="sub-title">Kontaktaufnahme per E-Mail</h3>
+      <p class="prose">Eine Kontaktaufnahme erfolgt freiwillig über die angegebene E-Mail-Adresse. Die übermittelten personenbezogenen Daten werden zum Zweck der Bearbeitung Ihrer Anfrage gespeichert und verarbeitet.</p>
+      <div class="sub-label">Rechtsgrundlage</div>
+      <p class="prose">Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) oder Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Die Daten werden nicht ohne Ihre Zustimmung an Dritte weitergegeben.</p>
+      <div class="sub-label">Speicherdauer</div>
+      <p class="prose">Die Daten werden gelöscht, sobald sie für die Bearbeitung der Anfrage nicht mehr erforderlich sind.</p>
 
-      <h3 class="ls-h3">Kontaktaufnahme per E-Mail</h3>
-      <p> Eine Kontaktaufnahme erfolgt freiwillig über die angegebene E-Mail-Adresse. In diesem Fall werden die mit der E-Mail übermittelten personenbezogenen Daten (insbesondere Ihre E-Mail-Adresse, Name und Inhalt Ihrer Anfrage) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert und verarbeitet. Die Kommunikation erfolgt im Rahmen eines persönlichen und nicht-kommerziellen Austauschs.
-      </p>
-      <div class="ls-h4">Rechtsgrundlage</div>
-      <p>
-        Die Verarbeitung erfolgt auf Grundlage eines berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO) oder zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden nicht ohne Ihre Zustimmung an Dritte weitergegeben.
-      </p>
-      <div class="ls-h4">Speicherdauer</div>
-      <p>
-        Die Daten werden gelöscht, sobald sie für die Bearbeitung der Anfrage nicht mehr erforderlich sind.
-      </p>
-
-      <h3 class="ls-h3">Cookies und Tracking</h3>
-      <p>
-        Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools (kein Google Analytics, keine Social-Media-Pixel, keine Werbenetzwerke). Es werden ausschließlich die technisch notwendigen Daten durch den Hosting-Anbieter GitHub verarbeitet (siehe oben).
-      </p>
+      <h3 class="sub-title">Cookies und Tracking</h3>
+      <p class="prose">Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools. Es werden ausschließlich die technisch notwendigen Daten durch den Hosting-Anbieter GitHub verarbeitet.</p>
     </div>
-  </div>
 
-  <!-- WIDERSPRUCHSRECHT -->
-  <div class="legal-section">
-    <div class="w">
-      <div class="ls-label">Art. 21 DSGVO</div>
-      <h2 class="ls-h2">Widerspruchsrecht</h2>
-
-      <h3 class="ls-h3">Einzelfallbezogenes Widerspruchsrecht</h3>
-      <p>
-        Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) erfolgt, Widerspruch einzulegen.
-      </p>
-      <p>
-        Legen Sie Widerspruch ein, werden Ihre personenbezogenen Daten nicht mehr verarbeitet, es sei denn, es können zwingende schutzwürdige Gründe für die Verarbeitung nachgewiesen werden, die Ihre Interessen überwiegen.
-      </p>
-
-      <h3 class="ls-h3">Empfänger eines Widerspruchs</h3>
+    <div class="legal-section">
+      <div class="section-label">Art. 21 DSGVO</div>
+      <h2 class="section-title">Widerspruchsrecht</h2>
+      <h3 class="sub-title">Einzelfallbezogenes Widerspruchsrecht</h3>
+      <p class="prose">Sie haben das Recht, aus Gründen Ihrer besonderen Situation jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO Widerspruch einzulegen.</p>
+      <p class="prose">Legen Sie Widerspruch ein, werden Ihre personenbezogenen Daten nicht mehr verarbeitet, es sei denn, es können zwingende schutzwürdige Gründe nachgewiesen werden, die Ihre Interessen überwiegen.</p>
+      <h3 class="sub-title">Empfänger eines Widerspruchs</h3>
       <div class="data-block">
-        <!-- ← ANPASSEN -->
-        <p>Damaris Mesffin</p>
-        <p><a href="mailto:kontakt@aida-advisory.de">kontakt@aida-advisory.de</a></p>
+        <div class="data-label">Kontakt</div>
+        <div class="data-value">
+          Damaris Mesffin<br>
+          <a href="mailto:kontakt@aida-advisory.de">kontakt@aida-advisory.de</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- AKTUALITÄT -->
-  <div class="legal-section">
-    <div class="w">
-         <div class="ls-label">Aktualität</div>
-      <h2 class="ls-h2">Änderung dieser Erklärung</h2>
-      <p>
-        Diese Datenschutzerklärung wird bei Bedarf angepasst, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen der Leistungen umzusetzen. Für einen erneuten Besuch gilt dann die jeweils neue Datenschutzerklärung.
-      </p>
-      <!-- ← ANPASSEN: Datum prüfen -->
-      <p>Stand: April 2026</p>
-
-      <div class="generator-note">
-        
-      </div>
+    <div class="legal-section">
+      <div class="section-label">Aktualität</div>
+      <h2 class="section-title">Änderung dieser Erklärung</h2>
+      <p class="prose">Diese Datenschutzerklärung wird bei Bedarf angepasst, damit sie stets den aktuellen rechtlichen Anforderungen entspricht. Für einen erneuten Besuch gilt dann die jeweils neue Datenschutzerklärung.</p>
+      <p class="prose-note">Stand: April 2026</p>
     </div>
-  </div>
 
+  </div>
 </div>
 
+<!-- FOOTER — DUNKEL -->
 <footer>
-  <div class="fw">
-    <div class="f-name">Aida Advisory Group</div>
-    <div class="f-links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="index.html">Zurück zur Website</a>
-    </div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="index.html">Zurück zur Website</a>
   </div>
+  <div class="footer-logo">AIDA <span>Advisory</span> Group</div>
 </footer>
 
 </body>
