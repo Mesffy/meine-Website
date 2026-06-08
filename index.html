@@ -32,16 +32,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NOISE TEXTURE OVERLAY ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='256' height='256' fill='%23faf7f2'/%3E%3Crect width='256' height='256' fill='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
-}
+
 
 /* ── NAV ── */
 nav {
@@ -902,25 +893,6 @@ footer {
 
 .footer-logo span { color: rgba(184,150,46,0.6); }
 
-.footer-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-
-.footer-links a {
-  font-size: 11px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: rgba(184,150,46,0.8);
-}
-
 .footer-copy {
   font-size: 11px;
   font-weight: 300;
@@ -933,6 +905,25 @@ footer {
   font-weight: 400;
   color: rgba(184,150,46,0.4);
   letter-spacing: 0.1em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.footer-links a {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: rgba(184,150,46,0.8);
 }
 
 /* ── ANIMATIONS ── */
@@ -980,7 +971,6 @@ footer {
   .hero-stats { grid-template-columns: 1fr; position: relative; }
   .stat-item { border-right: none; border-bottom: 1px solid rgba(184,150,46,0.1); padding: 24px 30px; }
   footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px; }
-  .footer-links { flex-direction: column; gap: 12px; }
   .nav-links { display: none; }
 }
 </style>
@@ -1009,7 +999,7 @@ footer {
     </h1>
 
     <p class="hero-sub">
-      Durch aktive Vernetzungen mit bundesweit agierenden Apothekenvermittlern prüfe ich diskret und direkt, ob Ihr passendes Gegenstück — Käufer oder Verkäufer — bereits existiert. Bevor[...]
+      Durch aktive Vernetzungen mit bundesweit agierenden Apothekenvermittlern prüfe ich diskret und direkt, ob Ihr passendes Gegenstück — Käufer oder Verkäufer — bereits existiert. Bevor Ihr Name fällt.
     </p>
 
     <div class="hero-actions">
@@ -1020,19 +1010,19 @@ footer {
 
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-number">1500+</div>
-      <div class="stat-label">Apotheken deutschlandweit</div>
-      <div class="stat-source">ABDA Bundesverband Deutscher Apothekerverbände</div>
+      <div class="stat-number">16.601</div>
+      <div class="stat-label">Apotheken in Deutschland</div>
+      <div class="stat-source">Quelle: ABDA, Stand 31.12.2025</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">~25%</div>
-      <div class="stat-label">Übergaben in den nächsten 5 Jahren</div>
-      <div class="stat-source">ABDA Branchenumfrage 2024</div>
+      <div class="stat-number">−22 %</div>
+      <div class="stat-label">Weniger Apotheken seit 2013</div>
+      <div class="stat-source">Quelle: ABDA Jahrbuch 2026</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">1-2</div>
-      <div class="stat-label">Jahre durchschnittliche Verkaufsdauer</div>
-      <div class="stat-source">Marktstandard für diskrete Vermittlung</div>
+      <div class="stat-number">Bundesweit</div>
+      <div class="stat-label">Aktive Vermittlungskooperationen</div>
+      <div class="stat-source">direkt · diskret · persönlich</div>
     </div>
   </div>
 </section>
@@ -1042,46 +1032,51 @@ footer {
   <div class="container">
     <div class="about-grid">
       <div class="about-left">
-        <p class="section-label">Über Uns</p>
-        <h2 class="about-title">Diskrete Apotheken&shy;vermittlung auf <em>persönlicher</em> Ebene.</h2>
-        <p class="about-text">
-          Seit mehr als 15 Jahren begleite ich Apotheken durch Veränderungsprozesse. Das Vermitteln von Käufern und Verkäufern funktioniert am besten über Vertrauen und persönliche Kontakte — nicht über standardisierte Prozesse.
+        <div class="section-label reveal">Über AIDA Advisory</div>
+        <h2 class="about-title reveal reveal-delay-1">
+          Mehr als Vermittlung —<br>
+          <em>Direkter Zugang</em><br>
+          zum Markt.
+        </h2>
+        <p class="about-text reveal reveal-delay-2">
+          AIDA Advisory Group ist spezialisiert auf Zusammenarbeiten. Als Brücke identifiziere ich gezielt qualifizierte <strong>Off-Market-Kontakte</strong> — verkaufsbereite Apothekeninhaber sowie geeignete Kaufinteressenten — und leite diese gezielt an passende Vermittlungspartner weiter.
         </p>
-        <p class="about-text">
-          Mein Netzwerk umfasst Apothekeneigentümer, Investoren und Vermittler bundesweit. <strong>Diese Kontakte helfen mir, schnell die richtige Gegenpartei für Sie zu finden.</strong>
+        <p class="about-text reveal reveal-delay-2">
+          Durch meine aktive Vernetzung mit bundesweiten Apothekenvermittlern kann ich <strong>diskret und direkt nach Ihren Vorraussetzungen prüfen.</strong> Meine Stärke liegt in der persönlichen Erstansprache und der präzisen Vorqualifizierung — damit Mandanten direkt dem Vermittler zugeführt werden, der ihr passendes Gegenstück bereits hat und Vermittler ausschließlich mit ernsthaften, geprüften Kontakten arbeiten.
         </p>
       </div>
-      <div class="about-right">
-        <ul class="values-list">
-          <li class="value-item">
-            <div class="value-number">01.</div>
+
+      <div class="about-right reveal reveal-delay-3">
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-number">01</div>
             <div class="value-content">
-              <div class="value-name">Diskretheit</div>
-              <div class="value-desc">Ihre Geschäfte bleiben privat. Nur relevante Parteien erfahren von Ihrem Anliegen.</div>
+              <div class="value-name">Direkt</div>
+              <div class="value-desc">Persönliche Erstansprache ohne Umwege — kein Portal, keine Ausschreibung, kein Rauschen.</div>
             </div>
-          </li>
-          <li class="value-item">
-            <div class="value-number">02.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-number">02</div>
             <div class="value-content">
-              <div class="value-name">Vernetzung</div>
-              <div class="value-desc">Ein etabliertes Netzwerk von Apothekern, Investoren und Vermittlern.</div>
+              <div class="value-name">Diskret</div>
+              <div class="value-desc">Absolute Vertraulichkeit ist Grundlage jeder Zusammenarbeit — von der ersten Ansprache bis zum Abschluss.</div>
             </div>
-          </li>
-          <li class="value-item">
-            <div class="value-number">03.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-number">03</div>
             <div class="value-content">
-              <div class="value-name">Direktheit</div>
-              <div class="value-desc">Keine überflüssigen Umwege. Schneller und effizienter Prozess.</div>
+              <div class="value-name">Persönlich</div>
+              <div class="value-desc">Jeder Kontakt wird individuell bewertet und vorqualifiziert. Kein automatisierter Prozess — nur echtes Engagement.</div>
             </div>
-          </li>
-          <li class="value-item">
-            <div class="value-number">04.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-number"></div>
             <div class="value-content">
-              <div class="value-name">Erfahrung</div>
-              <div class="value-desc">Über 15 Jahre Praxis in Apothekenvermittlung und Healthcare M&A.</div>
+              <div class="value-name"></div>
+            <div class="value-desc"><strong><em>„Die besten Verbindungen entstehen nicht durch Zufall, sondern durch Branchenkenntnis und das richtige Netzwerk zur richtigen Zeit.“</em></strong></div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1092,45 +1087,51 @@ footer {
   <div class="container">
     <div class="market-header">
       <div>
-        <p class="section-label">Markt</p>
-        <h2 class="market-title">Der deutsche Apothekenmarkt im <em>Umbruch.</em></h2>
+        <div class="section-label reveal" style="color:rgba(184,150,46,0.8);">
+          <span style="background:var(--gold);width:24px;height:1px;display:inline-block;"></span>
+          Marktdaten 2026
+        </div>
+        <h2 class="market-title reveal reveal-delay-1">
+          Ein Markt im<br>
+          <em>strukturellen Wandel.</em>
+        </h2>
       </div>
-      <div>
+      <div class="reveal reveal-delay-2">
         <p class="market-intro">
-          Deutschland hat über 1.500 Apotheken. Viele Eigentümer sind 50+ und planen Übergaben. Die nächsten 5–10 Jahre werden entscheidend. Für Verkäufer ist die Suche nach dem richtigen Käufer kritisch — für Käufer sind geeignete Kandidaten schwer zu finden.
+          Der deutsche Apothekenmarkt befindet sich in einem tiefgreifenden Konsolidierungsprozess. Die Zahlen sprechen eine klare Sprache — und schaffen gleichzeitig Chancen für alle Beteiligten.
         </p>
-        <p class="market-source">Quelle: ABDA Bundesverband Deutscher Apothekerverbände</p>
+        <p class="market-source">Quelle: ABDA Statistisches Jahrbuch „Die Apotheke: Zahlen, Daten, Fakten 2026", veröffentlicht 04.06.2026</p>
       </div>
     </div>
 
-    <!-- ABDA Stats -->
-    <div class="abda-grid">
+    <div class="abda-grid reveal">
       <div class="abda-stat">
-        <div class="abda-stat-num">1.500+</div>
-        <div class="abda-stat-label">Apotheken</div>
-        <div class="abda-stat-context">Deutschlandweit registriert</div>
+        <div class="abda-stat-num">16.601</div>
+        <div class="abda-stat-label">Apotheken gesamt</div>
+        <div class="abda-stat-context">Stand 31.12.2025 — niedrigster Stand seit fast 50 Jahren</div>
       </div>
       <div class="abda-stat">
-        <div class="abda-stat-num">~25%</div>
-        <div class="abda-stat-label">Übergaben in 5 Jahren</div>
-        <div class="abda-stat-context">Erwarteter Generationswechsel</div>
+        <div class="abda-stat-num">−440</div>
+        <div class="abda-stat-label">Nettorückgang 2025</div>
+        <div class="abda-stat-context">Nur 48 Neueröffnungen bundesweit — sinkende Tendenz</div>
       </div>
       <div class="abda-stat">
-        <div class="abda-stat-num">50+</div>
-        <div class="abda-stat-label">Durchschnittsalter</div>
-        <div class="abda-stat-context">Viele Apotheker nähern sich dem Ruhestand</div>
+        <div class="abda-stat-num">−22 %</div>
+        <div class="abda-stat-label">Seit 2013</div>
+        <div class="abda-stat-context">Jede fünfte Apotheke hat seit 2013 geschlossen</div>
       </div>
       <div class="abda-stat">
-        <div class="abda-stat-num">1–2 Jahre</div>
-        <div class="abda-stat-label">Durchschn. Verkaufsdauer</div>
-        <div class="abda-stat-context">Bei diskreter Vermittlung</div>
+        <div class="abda-stat-num">~1 Mio.</div>
+        <div class="abda-stat-label">Pharm. Dienstleistungen 2025</div>
+        <div class="abda-stat-context">Rasant steigende Nachfrage nach spezialisierten pDL</div>
       </div>
     </div>
 
-    <!-- Market Insight -->
-    <div class="market-insight">
+    <div class="market-insight reveal reveal-delay-1">
       <p class="market-insight-text">
-        Für Apotheken ist eine <strong>diskrete Vermittlung</strong> während der Übergabe oft entscheidend, um Kundschaft, Personal und Ruf zu bewahren. Öffentliche Ausschreibungen können zu Unruhe führen.
+        „Seit 2013 hat jede <strong>fünfte Apotheke</strong> schließen müssen — das bedeutet, dass Übergaben, Nachfolgeplanung und diskrete Vermittlung wichtiger werden denn je."
+        <br><br>
+        Für Inhaber, die jetzt handeln möchten, und Vermittler, die qualifizierte Kontakte suchen: <strong>Hier setzt AIDA Advisory an.</strong>
       </p>
     </div>
   </div>
@@ -1140,39 +1141,44 @@ footer {
 <section class="process" id="prozess">
   <div class="container">
     <div class="process-header">
-      <p class="section-label">Prozess</p>
-      <h2 class="process-title">Vier <em>klare</em> Schritte.</h2>
-      <p class="process-sub">Transparenz und Effizienz von Anfang an.</p>
+      <div class="section-label reveal">So arbeite ich</div>
+      <h2 class="process-title reveal reveal-delay-1">
+        Vier Schritte —<br>
+        <em>ein Ergebnis.</em>
+      </h2>
+      <p class="process-sub reveal reveal-delay-2">
+        Von der ersten diskreten Ansprache bis zur gesicherten Übergabe an den Vermittlungspartner — strukturiert, vertraulich und persönlich.
+      </p>
     </div>
 
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-number-wrap">
-          <div class="step-num">01</div>
+          <span class="step-num">01</span>
         </div>
-        <h3 class="step-title">Gespräch & Analyse</h3>
-        <p class="step-desc">Verständnis für Ihre Situation, Anforderungen und Ziele. Was ist Ihnen wichtig?</p>
+        <div class="step-title">Identifikation</div>
+        <div class="step-desc">Gezielte Recherche und direkte Ansprache geeigneter Apotheken — bundesweit, diskret und persönlich. Kein Portal, kein Massenversand.</div>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-1">
         <div class="step-number-wrap">
-          <div class="step-num">02</div>
+          <span class="step-num">02</span>
         </div>
-        <h3 class="step-title">Kandidatensuche</h3>
-        <p class="step-desc">Aktive Recherche im Netzwerk. Nur geeignete und motivierte Partner.</p>
+        <div class="step-title">Abgleich</div>
+                <div class="step-desc">Durch aktive Vernetzung mit bundesweit agierenden Vermittlern prüfe ich direkt, ob ein passendes Gegenstück bereits existiert — bevor Ihr Kontakt weitergegeben wird.</div></div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-number-wrap">
+          <span class="step-num">03</span>
+
+        </div>
+        <div class="step-title">Qualifizierung</div>
+        <div class="step-desc">Sobald das passende Gegenstück identifiziert ist, folgt DSGVO-konforme Einholung der Weitergabeeinwilligung bevor ein Name fällt.</div>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-3">
         <div class="step-number-wrap">
-          <div class="step-num">03</div>
+          <span class="step-num">04</span>
         </div>
-        <h3 class="step-title">Matchmaking & Verhandlung</h3>
-        <p class="step-desc">Vermittlung der Partner. Begleitung durch Verhandlung und Klärung.</p>
-      </div>
-      <div class="step">
-        <div class="step-number-wrap">
-          <div class="step-num">04</div>
-        </div>
-        <h3 class="step-title">Übergabe & Abschluss</h3>
-        <p class="step-desc">Unterstützung bei Übergabe und Einarbeitung für einen reibungslosen Übergang.</p>
+        <div class="step-title">Übergabe</div>
+        <div class="step-desc">Strukturierte Kontaktvermittlung an den passenden Vermittlungspartner — mit vollständigen Kontakt Daten und persönlicher Ersteinschätzung.</div>
       </div>
     </div>
   </div>
@@ -1181,33 +1187,33 @@ footer {
 <!-- TWO AUDIENCES -->
 <section class="audiences">
   <div class="container">
-    <div class="audiences-grid">
+    <div class="section-label reveal" style="margin-bottom:40px;">Für wen?</div>
+    <div class="audiences-grid reveal reveal-delay-1">
+
       <div class="audience-card card-apotheker">
-        <p class="audience-tag">Apotheker</p>
-        <h3 class="audience-title">Sie möchten Ihre Apotheke <em>übergeben</em>?</h3>
-        <p class="audience-text">
-          Wir finden den richtigen Käufer — einen, der Ihre Apotheke mit Respekt und Fachkompetenz fortführt. Diskret, schnell, zuverlässig.
-        </p>
+        <div class="audience-tag">Für Apotheker</div>
+        <h3 class="audience-title">Sie denken über<br><em>Veränderung nach?</em></h3>
+        <p class="audience-text">Ob Veräußerung, Expansion, oder Neugründer — ich höre zu, prüfe diskret und leite Sie an den richtigen Ansprechpartner weiter. Ohne öffentliche Ausschreibung, ohne Druck.</p>
         <ul class="audience-points">
-          <li>Vermittlung zu qualifizierten Käufern</li>
-          <li>Bewahrung von Kundschaft und Mitarbeitern</li>
-          <li>Faire Preisfindung</li>
-          <li>Rechtliche und kaufmännische Unterstützung</li>
+          <li>Diskreter Erstkontakt — kein Name fällt ohne Ihre Zustimmung</li>
+          <li>Prüfung welcher Partner bereits das passende Gegenstück besitzt</li>
+          <li>Weiterleitung an spezialisierte M&A-Vermittler bundesweit</li>
+          <li>Keine Verpflichtung beim Erstgespräch</li>
         </ul>
       </div>
+
       <div class="audience-card card-partner">
-        <p class="audience-tag">Investoren & Apotheker</p>
-        <h3 class="audience-title">Sie suchen eine Apotheke zum <em>Übernehmen</em>?</h3>
-        <p class="audience-text">
-          Wir verbinden Sie mit Verkäufern, deren Profil zu Ihren Vorstellungen passt — ohne lange Suche in öffentlichen Märkten.
-        </p>
+        <div class="audience-tag">Für Apothekenvermittler</div>
+        <h3 class="audience-title">Sie suchen <em>qualifizierte</em><br>Off-Market-Kontakte?</h3>
+        <p class="audience-text">Ich identifiziere und qualifiziere Kontakte bevor sie zu Ihnen kommen. Sie erhalten ausschließlich ernsthafte, vorgeprüfte Kontakte — mit Einwilligung und Ersteinschätzung.</p>
         <ul class="audience-points">
-          <li>Zugang zu verfügbaren Apotheken</li>
-          <li>Pre-screening nach Ihren Kriterien</li>
-          <li>Diskrete Vorverhandlungen</li>
-          <li>Begleitung von Valuation bis Übergabe</li>
+          <li>Vorqualifizierte Off-Market-Verkäufer und Kaufinteressenten — abgestimmt auf Ihre Regionen und Profile</li>
+          <li>Strukturierte Tippgebervereinbarung als Basis</li>
+          <li>DSGVO-konforme Einwilligung bereits eingeholt</li>
+          <li>Bundesweite Abdeckung — fokussiert auf Ihre Mandanten</li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>
@@ -1217,21 +1223,19 @@ footer {
   <div class="container">
     <div class="contact-inner">
       <div class="contact-left">
-        <p class="section-label">Kontakt</p>
-        <h2 class="contact-title">Lassen Sie uns <em>sprechen.</em></h2>
-        <p class="contact-text">
-          Ein kurzes Gespräch kostet Sie nichts und hilft uns, Ihr Anliegen zu verstehen. Wir rufen Sie gerne an oder treffen Sie persönlich.
+        <div class="section-label reveal" style="color:rgba(184,150,46,0.8);">
+          <span style="background:var(--gold);width:24px;height:1px;display:inline-block;"></span>
+          Kontakt
+        </div>
+        <h2 class="contact-title reveal reveal-delay-1">
+          Diskret.<br>
+          <em>Direkt.</em><br>
+          Persönlich.
+        </h2>
+        <p class="contact-text reveal reveal-delay-2">
+          Jede Anfrage behandle ich vertraulich. Ob Sie über einen Verkauf nachdenken, einen Käufer suchen oder eine Kooperation anstreben — schreiben Sie mir.
         </p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <div class="contact-icon-dot"></div>
-            <div>
-              <div class="contact-item-label">Telefon</div>
-              <div class="contact-item-value">
-                <a href="tel:+4917682088193">+49 176 / 820 88 193</a>
-              </div>
-            </div>
-          </div>
+        <div class="contact-details reveal reveal-delay-3">
           <div class="contact-item">
             <div class="contact-icon-dot"></div>
             <div>
@@ -1244,21 +1248,29 @@ footer {
           <div class="contact-item">
             <div class="contact-icon-dot"></div>
             <div>
-              <div class="contact-item-label">Adresse</div>
-              <div class="contact-item-value">
-                Bahnhofstraße 82<br>70736 Stuttgart
-              </div>
+              <div class="contact-item-label">Standort</div>
+              <div class="contact-item-value">Stuttgart · Baden-Württemberg</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-dot"></div>
+            <div>
+              <div class="contact-item-label">Tätigkeitsbereich</div>
+              <div class="contact-item-value">Deutschland · Bundesweit</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="contact-right">
+
+      <div class="contact-right reveal reveal-delay-2">
         <div class="confidential-box">
-          <h3 class="conf-title">Steht Ihr Anliegen unter Verschluss?</h3>
+          <h3 class="conf-title">Ihr Anliegen ist vertraulich — von Anfang an.</h3>
           <p class="conf-text">
-            Absolute Vertraulichkeit ist für uns selbstverständlich. Ihre Anfrage wird nur mit denjenigen Parteien geteilt, die für eine Vermittlung relevant sind.
+            Kein Name, keine Adresse, keine Zahlen werden ohne Ihre ausdrückliche Zustimmung weitergegeben. Ich halte mich an absolute Verschwiegenheit — das ist nicht nur mein Versprechen, sondern vertragliche Grundlage jeder Zusammenarbeit.
           </p>
-          <a href="mailto:kontakt@aida-advisory.de" class="conf-cta">Jetzt anfragen</a>
+          <a href="mailto:kontakt@aida-advisory.de" class="conf-cta">
+            Jetzt diskret anfragen
+          </a>
         </div>
       </div>
     </div>
@@ -1267,12 +1279,38 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">AIDA <span>Advisory</span></div>
+  <div class="footer-logo">AIDA <span>Advisory</span> Group</div>
   <div class="footer-links">
     <a href="impressum.html">Impressum</a>
     <a href="datenschutz.html">Datenschutz</a>
   </div>
+  <div class="footer-copy">© 2026 AIDA Advisory Group · Stuttgart · Apothekenvermittlung · Healthcare M&A</div>
+  <div class="footer-website">www.aida-advisory.de</div>
 </footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth nav background on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(8,14,20,0.98)';
+  } else {
+    nav.style.background = 'rgba(13,27,42,0.95)';
+  }
+});
+</script>
 
 </body>
 </html>
