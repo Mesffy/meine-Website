@@ -553,15 +553,15 @@ section {
 }
 
 /* Connecting line */
-.steps::before {
-  content: '';
+.steps-line {
   position: absolute;
   top: 32px;
-  left: calc(12.5%);
-  right: calc(12.5%);
+  left: 0;
+  right: 0;
   height: 1px;
   background: linear-gradient(90deg, var(--gold), rgba(184,150,46,0.3), var(--gold), rgba(184,150,46,0.3));
   z-index: 0;
+  pointer-events: none;
 }
 
 .step {
@@ -1157,6 +1157,7 @@ footer {
     </div>
 
     <div class="steps">
+      <div class="steps-line"></div>
       <div class="step reveal">
         <div class="step-number-wrap">
           <span class="step-num">01</span>
